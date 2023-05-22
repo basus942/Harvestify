@@ -1,7 +1,8 @@
 import React from "react";
 import Image from "next/image";
-import Products from "../components/Products";
-import Addproduct from "@/components/Addproducts";
+
+import Addproduct from "@/components/Products/Addproducts";
+import Products from "@/components/Products/Products";
 const HomePage = () => {
   return (
     <>
@@ -10,6 +11,7 @@ const HomePage = () => {
           className="mx-auto"
           width={1000}
           height={1000}
+          alt="banner"
           src="/6477332.jpg"
         ></Image>
       </div>

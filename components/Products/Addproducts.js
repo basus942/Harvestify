@@ -1,6 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
-import { auth } from "../Firebase";
+import { auth } from "../../Firebase";
 import { useRouter } from "next/router";
 import { ProtectedRoute } from "@/components/ProtectedRoute";
 

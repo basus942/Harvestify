@@ -1,16 +1,13 @@
-import { Footer } from "@/components/Footer";
-import Navabar from "@/components/Navbar";
-import { ProtectedRoute } from "@/components/ProtectedRoute";
+import Layout from "@/components/Layout/Layout";
+
 import "@/styles/globals.css";
 
 export default function App({ Component, pageProps }) {
   return (
     <>
-      <Navabar />
-      <div class="flex flex-col h-screen justify-between">
+      <Layout>
         <Component {...pageProps} />
-        <Footer />
-      </div>
+      </Layout>
     </>
   );
 }

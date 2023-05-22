@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect } from "react";
 import { useState } from "react";
-import Card from "@/components/Card";
+import Card from "@/components/Products/Card";
 const Products = () => {
   const [items, setItems] = useState([]);
   useEffect(() => {
@@ -29,7 +29,7 @@ const Products = () => {
     <>
       <div className="flex items-center justify-center flex-wrap ">
         {items.map((item) => (
-          <div className="itemDetails">
+          <div className="p-2">
             <Card title={item.title} image={item.image} price={item.price} />
           </div>
         ))}

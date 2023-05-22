@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 
-import { auth } from "../Firebase";
+import { auth } from "../../Firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { useRouter } from "next/router";
 

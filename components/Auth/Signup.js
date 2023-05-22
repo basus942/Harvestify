@@ -1,5 +1,5 @@
 import { useState, useRef } from "react";
-import { auth } from "../Firebase";
+import { auth } from "../../Firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 const Signup = () => {
   const emailref = useRef("");

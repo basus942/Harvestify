@@ -1,9 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
-import { auth } from "../Firebase";
+import { auth } from "../../Firebase";
 import { signOut } from "firebase/auth";
 import { useRouter } from "next/router";
-import { show } from "./ProtectedRoute";
+
 import { useState } from "react";
 
 const Navabar = () => {
@@ -17,22 +17,6 @@ const Navabar = () => {
   };
   const [profile, setProfile] = useState(false);
   return (
-    // <ul className="navul">
-    //   <li className="navHeading">
-    //     <Link href={"/"}>Harvestify</Link>
-    //   </li>
-    //   <li className="nav">
-    //     <span className="button5" onClick={signOutHandler}>
-    //       Sign Out
-    //     </span>
-    //   </li>
-    //   <li className="nav">
-    //     <Link href="/Products">Products</Link>
-    //   </li>
-    //   <li className="nav">
-    //     <Link href="/Addproducts">Add Products</Link>
-    //   </li>
-    // </ul>
     <>
       <nav className="bg-[#038242] text-[#d3eaf2]  mx-auto flex justify-between items-center px-8 ">
         <Image
@@ -49,32 +33,28 @@ const Navabar = () => {
           <li className="px-8">Blog</li>
         </ul>
         <ul className="flex-col ">
-          <div
-            className="px-2 mx-5 cursor-pointer flex-col font-bold"
+          <img
+            src="https://img.icons8.com/?size=512&id=103336&format=png"
+            className="h-10 px-2 mx-5 cursor-pointer flex-col font-bold"
             onClick={(e) => {
               setProfile(!profile);
             }}
-          >
-            <img
-              src="https://img.icons8.com/?size=512&id=103336&format=png"
-              className="h-10"
-            />
-          </div>
+          />
           {profile && (
-            <ul className="fixed bg-[#038242] p-7 ">
+            <ul className="absolute top-16 rounded-md bg-[#23ad68e8] p-6">
+              <li className="p-1 hover:bg-green-900 rounded-md cursor-pointer ">
+                <Link href={"/Cart"}>My Cart</Link>
+              </li>
               <li
-                className="px-2 pb-2 cursor-pointer font-medium hover:bg-slate-500 border-1"
+                className="p-1 hover:bg-green-900 cursor-pointer rounded-md "
                 onClick={() => {
                   router.push("/UserAuth");
                 }}
               >
                 Login
               </li>
-              <li className="px-2 pb-2 cursor-pointer font-medium hover:bg-slate-500 border-1">
-                Bag
-              </li>
               <li
-                className="px-2 pb-1 cursor-pointer text-[#ffffff] font-medium hover:bg-slate-500"
+                className="p-1 hover:bg-green-900 cursor-pointer rounded-md "
                 onClick={signOutHandler}
               >
                 Signout
