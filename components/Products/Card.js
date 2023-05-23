@@ -1,30 +1,32 @@
 import React from "react";
 
 const Card = ({ title, image, price }) => {
-  const add2cartHandler = () => {
-    const cartItem = {
-      title,
-      image,
-      price,
-    };
-    localStorage.setItem("add2cart", JSON.stringify(cartItem));
-    console.log("Item added to cart:", cartItem);
-  };
   return (
     <>
-      <div className="flex items-center flex-col w-80 h-80 bg-[#038242] mx-5  rounded-xl shadow-md overflow-hidden">
-        <img className="w-max h-96 p-4 rounded-xl" src={image} />
+      <div className="card w-96 ] shadow-xl">
+        <img className="w-max max-h-80 p-1  rounded-xl" src={image} />
         <div className="flex justify-between items-center b-0 pb-2">
-          <h2 className="font-bold text-white l-0 p-1">{title}</h2>
-          <p className="font-bold text-[#e03737]  p-1">${price}</p>
-          <button
-            className="rounded-full bg-white px-3 mx-3  hover:bg-[#7effbe] font-medium text-black w-max"
-            onClick={add2cartHandler}
-          >
-            Add to Cart
-          </button>
+          <div className="flex-col ">
+            <h2 className="font-bold text-2xl text-white l-0 p-1">{title}</h2>
+            <p className="font-extrabold text-3xl text-[#e03737]  p-1">
+              ${price}
+            </p>
+          </div>
+          <button className="btn btn-sm ">Add to Cart</button>
         </div>
       </div>
+      {/* <div className="card w-96 bg-base-100 shadow-xl">
+        <figure>
+          <img src={image} alt="products" />
+        </figure>
+        <div className="card-body">
+          <h2 className="card-title">Shoes!</h2>
+          <p>If a dog chews shoes whose shoes does he choose?</p>
+          <div className="card-actions justify-end">
+            <button className="btn btn-primary">Buy Now</button>
+          </div>
+        </div>
+      </div> */}
     </>
   );
 };

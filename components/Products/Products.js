@@ -1,38 +1,21 @@
-import axios from "axios";
-import { useEffect } from "react";
-import { useState } from "react";
+import { useContext } from "react";
 import Card from "@/components/Products/Card";
+import { Cart } from "@/context/Context";
 const Products = () => {
-  const [items, setItems] = useState([]);
-  useEffect(() => {
-    axios
-      .get(
-        "https://login-auth-d2384-default-rtdb.firebaseio.com/harvestify/products.json"
-      )
-      .then((res) => {
-        const data = res.data;
-
-        // Convert the object of objects into an array of objects
-        const productList = Object.keys(data).map((productId) => ({
-          id: productId,
-          ...data[productId],
-        }));
-
-        setItems(productList);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
-
+  const items = useContext(Cart);
+  console.log(items);
   return (
     <>
       <div className="flex items-center justify-center flex-wrap ">
-        {items.map((item) => (
-          <div className="p-2">
-            <Card title={item.title} image={item.image} price={item.price} />
-          </div>
-        ))}
+        {items ? (
+          items.map((item) => (
+            <div className="p-2" key={item.key}>
+              <Card title={item.title} image={item.image} price={item.price} />
+            </div>
+          ))
+        ) : (
+          <p>Loading...</p>
+        )}
       </div>
     </>
   );

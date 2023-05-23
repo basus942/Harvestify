@@ -14,7 +14,7 @@ export const ProtectedRoute = ({ children }) => {
     return unSubscribe();
   }, []);
   if (!user) {
-    router.push("/Auth/UserAuth");
+    router.push("/UserAuth");
   }
 
   return <div>{children}</div>;

@@ -3,6 +3,7 @@ import Image from "next/image";
 
 import Addproduct from "@/components/Products/Addproducts";
 import Products from "@/components/Products/Products";
+
 const HomePage = () => {
   return (
     <>

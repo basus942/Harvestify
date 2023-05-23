@@ -2,12 +2,14 @@ import React from "react";
 
 const About = () => {
   return (
-    <>
-      <div className="flex justify-between p-6">
-        <div className="container mx-8 px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold mb-11  text-white">
-            About Harvestify
-          </h2>
+    <div className="hero min-h-screen bg-base-200">
+      <div className="hero-content flex-col lg:flex-row">
+        <img
+          src="https://media.istockphoto.com/id/171579643/photo/tomato-greenhouse.jpg?s=612x612&w=0&k=20&c=BLtIrrBprkZlIHNfSYIhkm3aebVUjqxsS-Yoqa1ss08="
+          className="max-w-xl rounded-lg shadow-2xl"
+        />
+        <div>
+          <h1 className="text-5xl font-bold">About Harvestify</h1>
           <p className="text-lg mb-8">
             Welcome to Harvestify, your one-stop destination for fresh and
             healthy fruits and vegetables. We believe that good nutrition is the
@@ -33,12 +35,8 @@ const About = () => {
             experience the difference of truly delicious fruits and vegetables.
           </p>
         </div>
-        <img
-          src="https://media.istockphoto.com/id/1171590298/photo/farmers-working-in-rice-field.jpg?s=612x612&w=0&k=20&c=P8SO6BrTWfHkDF68TTaSYpXoEOdSG3AW-48Vks2gYvI="
-          className="mx-8"
-        />
       </div>
-    </>
+    </div>
   );
 };
 

@@ -5,8 +5,6 @@ module.exports = {
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  theme: {
-    extend: { gc: "#4ACE8D" },
-  },
-  plugins: [],
+  theme: ["luxury"],
+  plugins: [require("daisyui")],
 };
