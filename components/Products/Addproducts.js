@@ -112,8 +112,8 @@ const Addproduct = () => {
                   name="type"
                   onChange={handleData}
                 >
-                  <option value="A">Fruit</option>
-                  <option value="B"> Vegtable </option>
+                  <option value="Fruit">Fruit</option>
+                  <option value="Vegetable"> Vegtable </option>
                 </select>
               </label>
               <br />
