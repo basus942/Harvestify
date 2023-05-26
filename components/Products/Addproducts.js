@@ -1,13 +1,12 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
-import { auth } from "../../Firebase";
-import { useRouter } from "next/router";
-import { ProtectedRoute } from "@/components/ProtectedRoute";
+
+import { ProtectedRoute } from "@/context/ProtectedRoute";
 
 const Addproduct = () => {
-  const router = useRouter();
   const productdata = { title: "", image: "", price: "", type: "" };
   const [enteredData, setEnteredData] = useState(productdata);
+  const [submit, setSubmit] = useState(false);
   const handleData = (e) => {
     setEnteredData({ ...enteredData, [e.target.name]: e.target.value });
   };
@@ -25,6 +24,27 @@ const Addproduct = () => {
       axios(configRDFirebase)
         .then((res) => {
           console.log(res);
+          setSubmit(true);
+        })
+
+        .catch((err) => {
+          console.log(err.message);
+        });
+    }
+  };
+  useEffect(() => {
+    if (submit) {
+      const timeout = setTimeout(() => {
+        setSubmit(false);
+      }, 2000);
+
+      return () => clearTimeout(timeout);
+    }
+  }, [submit]);
+  return (
+    <>
+      <ProtectedRoute>
+        {submit && (
           <div className="alert alert-success shadow-lg">
             <div>
               <svg
@@ -42,18 +62,9 @@ const Addproduct = () => {
               </svg>
               <span>Your purchase has been confirmed!</span>
             </div>
-          </div>;
-        })
+          </div>
+        )}
 
-        .catch((err) => {
-          console.log(err.message);
-        });
-    }
-  };
-
-  return (
-    <>
-      <ProtectedRoute>
         <div className="flex items-center text-white flex-col w-80 h-80 bg-[#038242] mx-5  rounded-xl mb-24 ">
           <form onSubmit={handleSubmit}>
             <div className="flex-col">

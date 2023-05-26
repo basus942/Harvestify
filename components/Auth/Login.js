@@ -1,60 +1,66 @@
-import { useState } from "react";
-import axios from "axios";
+import { useRef, useState } from "react";
 
 import { auth } from "../../Firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { useRouter } from "next/router";
 
 const Login = () => {
-  const [email, setEmail] = useState("");
-  const [pass, setPass] = useState("");
+  const [loading, setLoading] = useState(false);
+  const emailref = useRef("");
+  const passref = useRef("");
 
   const router = useRouter();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
+    setLoading(true);
     e.preventDefault();
-    signInWithEmailAndPassword(auth, email, pass)
-      .then((userCredentials) => {
-        router.push("/Home");
-      })
-      .catch((err) => {
+    try {
+      await signInWithEmailAndPassword(
+        auth,
+        emailref.current.value,
+        passref.current.value
+      );
+    } catch {
+      (err) => {
         console.log(err);
-      });
+      };
+    } finally {
+      setLoading(false);
+      router.push("/Home");
+    }
   };
   return (
     <>
-      <form className="form" onSubmit={handleSubmit}>
-        <div className="centerContainer">
-          <br />
-          <label>
-            Email :
-            <input
-              type="email"
-              name="email"
-              placeholder="Email@xyz.com"
-              value={email}
-              onChange={(e) => {
-                setEmail(e.target.value);
-              }}
-            ></input>
-          </label>
-          <label>
-            Password :
-            <input
-              type="password"
-              name="password"
-              placeholder="Password"
-              value={pass}
-              onChange={(e) => {
-                setPass(e.target.value);
-              }}
-            ></input>
-          </label>
-          <button type="submit" className="button5">
-            Log in
-          </button>
-        </div>
-      </form>
+      {loading ? (
+        <h1>Loading ...</h1>
+      ) : (
+        <form className="form" onSubmit={handleSubmit}>
+          <div className="centerContainer">
+            <br />
+            <label>
+              Email :
+              <input
+                type="email"
+                name="email"
+                placeholder="Email@xyz.com"
+                ref={emailref}
+              ></input>
+            </label>
+            <label>
+              Password :
+              <input
+                type="password"
+                name="password"
+                placeholder="Password"
+                ref={passref}
+              ></input>
+            </label>
+            <button type="submit" className="button5">
+              Log in
+            </button>
+          </div>
+        </form>
+      )}
     </>
   );
 };

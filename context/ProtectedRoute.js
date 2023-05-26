@@ -2,6 +2,9 @@ import { auth } from "../Firebase";
 import { onAuthStateChanged } from "firebase/auth";
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import { createContext } from "react";
+
+export const AuthContext = createContext();
 
 export const ProtectedRoute = ({ children }) => {
   const router = useRouter();
@@ -17,5 +20,5 @@ export const ProtectedRoute = ({ children }) => {
     router.push("/UserAuth");
   }
 
-  return <div>{children}</div>;
+  return <AuthContext.Provider value={user}>{children}</AuthContext.Provider>;
 };

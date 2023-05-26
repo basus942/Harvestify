@@ -1,9 +1,20 @@
-import { createContext, useEffect, useState } from "react";
+import {
+  createContext,
+  useContext,
+  useEffect,
+  useReducer,
+  useState,
+} from "react";
 import axios from "axios";
-export const Cart = createContext();
+import CartReducer from "./CartReducer";
+const Cart = createContext();
 
 const Context = ({ children }) => {
-  const [productList, setProductList] = useState([]);
+  const [state, dispatch] = useReducer(CartReducer, {
+    productList: [], // Initialize productList as an empty array
+    cart: [],
+  });
+
   useEffect(() => {
     axios
       .get(
@@ -18,13 +29,18 @@ const Context = ({ children }) => {
           ...data[productId],
         }));
 
-        setProductList(products);
+        dispatch({ type: "SET_PRODUCT_LIST", payload: products });
       })
       .catch((error) => {
         console.log(error);
       });
   }, []);
-  return <Cart.Provider value={productList}>{children}</Cart.Provider>;
+
+  return <Cart.Provider value={{ state, dispatch }}>{children}</Cart.Provider>;
 };
 
 export default Context;
+
+export const cartContext = () => {
+  return useContext(Cart);
+};
