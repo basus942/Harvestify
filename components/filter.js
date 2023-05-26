@@ -24,6 +24,12 @@ const Filter = ({ child }) => {
       >
         Vegetable
       </button>
+      <button
+        className={`btn ${activeFilter === "All" ? "btn-active" : "filter"}`}
+        onClick={() => filterHandler("All")}
+      >
+        All
+      </button>
     </div>
   );
 };

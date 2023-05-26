@@ -5,6 +5,11 @@ const CartReducer = (state, action) => {
         ...state,
         productList: action.payload,
       };
+    case "ADD_TO_CART":
+      return {
+        ...state,
+        cart: [...state.cart, { ...action.payload, qty: 1 }],
+      };
     // Add more cases for other actions if needed
     default:
       return state;
