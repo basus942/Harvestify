@@ -1,7 +1,18 @@
 import { cartContext } from "@/context/Context";
 import React from "react";
 
-const Card = ({ title, image, price, items }) => {
+const Card = ({ title, image, price }) => {
+  const { dispatch } = cartContext();
+  const add2cartHandler = () => {
+    dispatch({
+      type: "ADD_TO_CART",
+      payload: {
+        title: title,
+        image: image,
+        price: price,
+      },
+    });
+  };
   return (
     <>
       <div className="card w-96 ] shadow-xl">
@@ -17,7 +28,7 @@ const Card = ({ title, image, price, items }) => {
               ${price}
             </p>
           </div>
-          <button className="btn btn-sm " addButton>
+          <button className="btn btn-sm " onClick={add2cartHandler}>
             Add to Cart
           </button>
         </div>

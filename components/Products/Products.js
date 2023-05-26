@@ -6,7 +6,7 @@ import Filter from "../filter";
 const Products = () => {
   const [filter, setFilter] = useState("Fruit");
 
-  const { state, dispatch } = cartContext();
+  const { state } = cartContext();
   const upLift = (e) => {
     setFilter(e);
   };
@@ -28,14 +28,6 @@ const Products = () => {
                   title={item.title}
                   image={item.image}
                   price={item.price}
-                  addButton={
-                    (onclick = () => {
-                      dispatch({
-                        type: "ADD_TO_CART",
-                        payload: item,
-                      });
-                    })
-                  }
                 />
               </div>
             ))
