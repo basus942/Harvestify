@@ -11,31 +11,37 @@ const Cart = () => {
   }
 
   return (
-    <div className="grid place-items-center">
-      <div className="font-bold text-4xl m-3 ">Cart</div>
-      <div className=" font-semibold text-black text-xl m-6">
-        <table className="">
-          {cart.map((item) => (
-            <tr key={item.id} className="bg-[#038242] p-2 m-2 border">
-              <th>{item.id}</th>
-              <td className="m-6">
-                <img
-                  src={item.image}
-                  alt="product-image"
-                  width={200}
-                  height={200}
-                  className="m-2"
-                />
-              </td>
-              <td>
-                {item.title}
-                <br />₹ {item.price}
-              </td>
-            </tr>
-          ))}
-        </table>
+    <div className="flex items-center justify-center  bg-opacity-75 text-black">
+      <div className="bg-[#7a7a7a] rounded-lg m-6">
+        <div className="font-bold text-4xl  ">Cart</div>
+        <div className=" font-semibold text-xl m-6">
+          <table className="">
+            {cart.map((item) => (
+              <tr
+                key={item.id}
+                className="bg-[#038242] p-2 m-2 border rounded-lg"
+              >
+                <th>{item.id}</th>
+                <td className="m-6 ">
+                  <img
+                    src={item.image}
+                    alt="product-image"
+                    width={200}
+                    height={200}
+                    className="m-2 rounded-lg"
+                  />
+                </td>
+                <td>
+                  {item.title}
+                  <br />₹ {item.price}
+                </td>
+              </tr>
+            ))}
+          </table>
+
+          <button className="btn btn-primary btn-lg m-3 ">Buy Now</button>
+        </div>
       </div>
-      <button className="btn btn-primary btn-lg mb-16">Buy Now</button>
     </div>
   );
 };
