@@ -34,32 +34,41 @@ const Login = () => {
       {loading ? (
         <h1>Loading ...</h1>
       ) : (
-        <form className="form" onSubmit={handleSubmit}>
-          <div className="centerContainer">
-            <br />
-            <label>
-              Email :
+        <div className="max-w-sm mx-auto bg-[#609966] text-black shadow-md rounded-xl px-8 py-6">
+          <form className="space-y-4" onSubmit={handleSubmit}>
+            <div>
+              <label htmlFor="email" className="block font-bold mb-1">
+                Email:
+              </label>
               <input
                 type="email"
+                id="email"
                 name="email"
                 placeholder="Email@xyz.com"
                 ref={emailref}
-              ></input>
-            </label>
-            <label>
-              Password :
+                className="w-full border border-gray-300 rounded px-3 py-2"
+              />
+            </div>
+
+            <div>
+              <label htmlFor="password" className="block font-bold mb-1">
+                Password:
+              </label>
               <input
                 type="password"
+                id="password"
                 name="password"
                 placeholder="Password"
                 ref={passref}
-              ></input>
-            </label>
-            <button type="submit" className="button5">
+                className="w-full border border-gray-300 rounded px-3 py-2"
+              />
+            </div>
+
+            <button type="submit" className="btn">
               Log in
             </button>
-          </div>
-        </form>
+          </form>
+        </div>
       )}
     </>
   );

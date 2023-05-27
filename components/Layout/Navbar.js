@@ -73,13 +73,13 @@ const Navabar = () => {
                   </h2>
                 </div>
               ) : (
-                <div className="max-h-80 overflow-y-auto">
+                <div className="max-h-80 overflow-y-auto ">
                   {cart.map((item) => (
                     <div>
-                      <table className=" w-full  font-bold">
+                      <table className=" w-full my-2 divide-y  font-bold">
                         <tbody>
                           {/* row 1 */}
-                          <tr className="m-12 shadow-2xl ">
+                          <tr className="m-12 shadow-2xl  bg-[rgb(3,130,66)] ">
                             <td className="avatar">
                               <div className="w-24 rounded-xl m-2">
                                 <img src={item.image} />

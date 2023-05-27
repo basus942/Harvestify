@@ -1,14 +1,14 @@
 import { cartContext } from "@/context/Context";
 import React, { useState, useEffect } from "react";
 
-const Card = ({ title, image, price, id }) => {
+const Card = ({ title, image, price }) => {
   const [alert, setAlert] = useState(false);
   const { dispatch } = cartContext();
   const add2cartHandler = () => {
     dispatch({
       type: "ADD_TO_CART",
       payload: {
-        id: id,
+        id: Math.random(),
         title: title,
         image: image,
         price: price,

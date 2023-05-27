@@ -65,59 +65,63 @@ const Addproduct = () => {
           </div>
         )}
 
-        <div className="flex items-center text-white flex-col w-80 h-80 bg-[#038242] mx-5  rounded-xl mb-24 ">
+        <div className="flex items-center text-white flex-col w-80 h-94 bg-[#038242] mx-5  rounded-xl mb-24 pb-2 ">
           <form onSubmit={handleSubmit}>
             <div className="flex-col">
-              <h1 className="font-bold text-xl m-2 ">Add Product</h1>
+              <h1 className="font-bold text-xl m-2">Add Product</h1>
               <br />
-              <label className="font-medium ">
-                Title :
+              <label className="font-medium">
+                Title:
                 <br />
                 <input
                   type="text"
                   name="title"
                   value={enteredData.title}
                   placeholder="title"
+                  className="input-sm "
                   onChange={handleData}
-                ></input>
+                />
                 <br />
               </label>
-              <label className="font-medium ">ImageUrl :</label>
+              <label className="font-medium">ImageUrl:</label>
               <br />
               <input
                 type="url"
                 name="image"
                 value={enteredData.image}
                 placeholder="imageUrl"
+                className="input-sm "
                 onChange={handleData}
-              ></input>
+              />
               <br />
-              <label className="font-medium ">
-                Price :
+              <label className="font-medium">
+                Price:
                 <br />
                 <input
                   type="number"
                   name="price"
                   value={enteredData.price}
                   placeholder="Price in $"
+                  className="input-sm "
                   onChange={handleData}
-                ></input>
+                />
                 <br />
               </label>
-              <label className="font-medium ">
-                Type :
+              <label className="font-medium text-black">
+                Type:
                 <br />
                 <select
                   value={enteredData.type}
                   name="type"
+                  className="input-md w-50"
                   onChange={handleData}
                 >
                   <option value="Fruit">Fruit</option>
-                  <option value="Vegetable"> Vegtable </option>
+                  <option value="Vegetable">Vegetable</option>
                 </select>
               </label>
               <br />
-              <button type="submit" className="button5">
+              <button type="submit" className="btn btn-accent">
                 ADD
               </button>
             </div>

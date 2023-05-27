@@ -21,8 +21,8 @@ const UserAuth = () => {
 
   return (
     <>
-      <div className="box">
-        <div className="row">
+      <div className="grid place-items-center">
+        <div className="my-12">
           <ul>
             <span
               onClick={handleLogPopUp}
