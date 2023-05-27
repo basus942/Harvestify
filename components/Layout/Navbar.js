@@ -6,6 +6,7 @@ import { useRouter } from "next/router";
 
 import { AuthContext } from "../../context/ProtectedRoute";
 import { useContext } from "react";
+import { cartContext } from "@/context/Context";
 
 const Navabar = () => {
   const User = useContext(AuthContext);
@@ -17,6 +18,9 @@ const Navabar = () => {
       })
       .catch((err) => console.log(err));
   };
+  const {
+    state: { cart },
+  } = cartContext();
 
   return (
     <div className="navbar   bg-[#038242]">
@@ -38,6 +42,7 @@ const Navabar = () => {
           <div className="dropdown dropdown-end">
             <label tabIndex={0} className="btn btn-ghost  btn-circle">
               <div className="indicator">
+                {/* cart icon */}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-5 w-5 "
@@ -52,25 +57,58 @@ const Navabar = () => {
                     d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
                   />
                 </svg>
-                <span className="badge badge-sm indicator-item">8</span>
+                <span className="badge badge-sm indicator-item">
+                  {cart.length}
+                </span>
               </div>
             </label>
             <div
               tabIndex={0}
               className="mt-3 card card-compact dropdown-content w-52 bg-base-100 shadow"
             >
-              <div className="card-body">
-                <span className="font-bold text-lg">8 Items</span>
-                <span className="text-info">Subtotal: $999</span>
-                <div className="card-actions">
-                  <button
-                    className="btn btn-primary btn-block"
-                    onClick={() => router.push("/Cart")}
-                  >
-                    View cart
-                  </button>
+              {cart.length == 0 ? (
+                <div className="flex flex-col items-center mt-12">
+                  <h2 className="text-3xl font-bold mb-5">
+                    Your Cart is <span className="text-red-600">Empty</span>
+                  </h2>
                 </div>
-              </div>
+              ) : (
+                <div className="max-h-80 overflow-y-auto">
+                  {cart.map((item) => (
+                    <div>
+                      <table className=" w-full  font-bold">
+                        <tbody>
+                          {/* row 1 */}
+                          <tr className="m-12 shadow-2xl ">
+                            <td className="avatar">
+                              <div className="w-24 rounded-xl m-2">
+                                <img src={item.image} />
+                              </div>
+                            </td>
+                            <td>{item.title}</td>
+                            <td className="text-red-600 font-bold text-right pr-4">
+                              ₹ {item.price}
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  ))}
+
+                  <div className="card-actions">
+                    <span className="font-bold text-lg">{cart.length}</span>
+                    <span className=" text-black font-semibold">
+                      Subtotal:{" "}
+                    </span>
+                    <button
+                      className="btn btn-primary btn-block  "
+                      onClick={() => router.push("/Cart")}
+                    >
+                      View cart
+                    </button>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
           <div className="dropdown dropdown-end">

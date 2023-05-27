@@ -133,14 +133,7 @@ a {
   transform: scale(1.05);
 }
 
-/* .card img {
-  width: 100%;
-  height: 230px;
-  object-fit: cover;
-  padding: 12px;
-  border: wheat;
-  border-radius: 20px;  
-} */
+
 
 .card-body {
   padding: 8px;
@@ -224,40 +217,7 @@ color: #40513B;
   font-size: 15px;
   font-weight: 600;
 }
-.button5{
-  background-color: rgb(44, 44, 44);
-  height: 40px;
-  width: 70px;
-  border-radius: 15px;
-  margin: 10px 2px;
-  font-weight: bolder;
-  text-align: center;
-  box-shadow: 1px 2px 4px #20291d;
-  transition-duration: 0.9s;
-  cursor:grabbing;
-  
-}
-.button5:hover {
-  color: black;
-  background-color:#8ecc94;
-  font-weight:10000 ;
-  
-}
-  .authContainer{
-    float: right;
 
-  }
-.box{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin:5rem auto;
-  width:500px ;
-  height: 280px;
-  background-color: #609966;
-  box-shadow: 5px 10px 8px #20291d;
-  border-radius: 25px;
-}
 
 .row{
   display: flex;
@@ -274,15 +234,7 @@ color: #40513B;
   cursor: grab;
   transition-duration: 0.6s;
 }
-.spanauth:hover{
-  background-color:#29492c;
-  color: white
-}
-.spanauth.active {
-  color: #fff;
-  background-color: #223f25;
-  /* Add any additional styles for the active state */
-}
+
 .footer {
   position: fixed;
   bottom: 0;
@@ -292,24 +244,3 @@ color: #40513B;
   background-color: #131312;
 }
 
-.containerfooter {
-  max-width: 960px;
-  margin: 0 auto;
-}
-
-.footer-text {
-  color: #609966;
-  font-size: 14px;
-  margin: 0;
-  font-weight: bolder;
-}
-
-.homegif{
-  width: 55%;
-  object-fit:fill;
-  border-radius: 25px;
-}
-
-.pr{
-  margin-left: 100px;
-}

@@ -13,6 +13,7 @@ const Products = () => {
   console.log(state.cart);
 
   const { productList } = state;
+
   return (
     <>
       <div className="flex items-center justify-center">
@@ -23,11 +24,12 @@ const Products = () => {
           productList
             .filter((item) => (filter === "All" ? true : item.type === filter))
             .map((item) => (
-              <div className="p-2" key={item.key}>
+              <div className="p-2" id={item.id}>
                 <Card
                   title={item.title}
                   image={item.image}
                   price={item.price}
+                  id={item.id}
                 />
               </div>
             ))

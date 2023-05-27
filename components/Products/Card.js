@@ -1,13 +1,14 @@
 import { cartContext } from "@/context/Context";
 import React, { useState, useEffect } from "react";
 
-const Card = ({ title, image, price }) => {
+const Card = ({ title, image, price, id }) => {
   const [alert, setAlert] = useState(false);
   const { dispatch } = cartContext();
   const add2cartHandler = () => {
     dispatch({
       type: "ADD_TO_CART",
       payload: {
+        id: id,
         title: title,
         image: image,
         price: price,
@@ -46,7 +47,7 @@ const Card = ({ title, image, price }) => {
           </div>
         </div>
       )}
-      <div className="card w-96 ] shadow-xl">
+      <div className="card w-96  shadow-xl">
         <img
           className="w-max max-h-80 p-1  rounded-xl"
           loading="lazy"
@@ -59,6 +60,7 @@ const Card = ({ title, image, price }) => {
               Rs {price}
             </p>
           </div>
+
           <button className="btn btn-sm " onClick={add2cartHandler}>
             Add to Cart
           </button>
