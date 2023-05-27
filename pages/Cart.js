@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { cartContext } from "@/context/Context";
 
 const Cart = () => {
@@ -11,40 +11,32 @@ const Cart = () => {
   }
 
   return (
-    <>
-      <div className="overflow-x-auto">
-        <table className="table-compact table-zebra w-full">
-          {/* head */}
-          <thead>
-            <tr>
-              <th></th>
-              <th>Image</th>
-              <th>Title</th>
-              <th>Price</th>
+    <div className="grid place-items-center">
+      <div className="font-bold text-4xl m-3 ">Cart</div>
+      <div className=" font-semibold text-black text-xl m-6">
+        <table className="">
+          {cart.map((item) => (
+            <tr key={item.id} className="bg-[#038242] p-2 m-2 border">
+              <th>{item.id}</th>
+              <td className="m-6">
+                <img
+                  src={item.image}
+                  alt="product-image"
+                  width={200}
+                  height={200}
+                  className="m-2"
+                />
+              </td>
+              <td>
+                {item.title}
+                <br />₹ {item.price}
+              </td>
             </tr>
-          </thead>
-          <tbody>
-            {cart.map((item) => (
-              <tr>
-                <th key={item.id}>{item.id}</th>
-                <td>
-                  <img
-                    src={item.image}
-                    alt="product-image"
-                    width={150}
-                    height={150}
-                  />
-                </td>
-                <td>{item.title}</td>
-                <td>{item.price}</td>
-              </tr>
-            ))}
-          </tbody>
+          ))}
         </table>
-
-        <button className="btn btn-primary btn-lg">Buy Now</button>
       </div>
-    </>
+      <button className="btn btn-primary btn-lg mb-16">Buy Now</button>
+    </div>
   );
 };
 
