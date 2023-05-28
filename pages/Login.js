@@ -20,7 +20,9 @@ const Login = () => {
 
   const signInwithGoogleHandler = async () => {
     try {
-      const result = signInWithPopup(auth, provider);
+      signInWithPopup(auth, provider).then((e) => {
+        router.push("/Home");
+      });
     } catch (error) {
       console.log(error);
     }
@@ -33,14 +35,15 @@ const Login = () => {
         auth,
         emailref.current.value,
         passref.current.value
-      );
+      ).then((e) => {
+        router.push("/Home");
+      });
     } catch {
       (err) => {
         console.log(err);
       };
     } finally {
       setLoading(false);
-      router.push("/Home");
     }
   };
   if (User) {
