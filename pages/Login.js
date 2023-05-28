@@ -18,7 +18,8 @@ const Login = () => {
   const User = useProtectedRoute();
   const provider = new GoogleAuthProvider();
 
-  const signInwithGoogleHandler = async () => {
+  const signInwithGoogleHandler = async (e) => {
+    e.preventDefault();
     try {
       signInWithPopup(auth, provider).then((e) => {
         router.push("/Home");
