@@ -1,7 +1,8 @@
 import { useContext, useState } from "react";
-import Card from "@/components/Products/Card";
+
 import { cartContext } from "@/context/Context";
 import Filter from "../filter";
+import CardComp from "@/components/Products/Card";
 
 const Products = () => {
   const [filter, setFilter] = useState("Fruit");
@@ -19,13 +20,13 @@ const Products = () => {
       <div className="flex items-center justify-center">
         <Filter child={upLift} />
       </div>
-      <div className="flex items-center justify-center flex-wrap ">
+      <div className="flex items-center justify-center flex-wrap mb-24">
         {productList ? (
           productList
             .filter((item) => (filter === "All" ? true : item.type === filter))
             .map((item) => (
               <div className="p-2" id={item.id}>
-                <Card
+                <CardComp
                   title={item.title}
                   image={item.image}
                   price={item.price}

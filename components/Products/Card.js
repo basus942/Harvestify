@@ -1,7 +1,15 @@
 import { cartContext } from "@/context/Context";
 import React, { useState, useEffect } from "react";
+import {
+  Card,
+  CardHeader,
+  CardBody,
+  CardFooter,
+  Typography,
+  Button,
+} from "@material-tailwind/react";
 
-const Card = ({ title, image, price }) => {
+const CardComp = ({ title, image, price }) => {
   const [alert, setAlert] = useState(false);
   const { dispatch } = cartContext();
   const add2cartHandler = () => {
@@ -47,27 +55,41 @@ const Card = ({ title, image, price }) => {
           </div>
         </div>
       )}
-      <div className="card w-96  shadow-xl">
-        <img
-          className="w-max max-h-80 p-1  rounded-xl"
-          loading="lazy"
-          src={image}
-        />
-        <div className="flex justify-between items-center b-0 pb-2">
-          <div className="flex-col ">
-            <h2 className="font-bold text-2xl text-white l-0 p-1">{title}</h2>
-            <p className="font-extrabold text-3xl text-[#e03737]  p-1">
+      <Card className="w-96 bg-green-400">
+        <CardHeader shadow={false} floated={false} className="h-96">
+          <img src={image} className="w-full h-full object-cover" />
+        </CardHeader>
+        <CardBody>
+          <div className="flex items-center justify-between mb-2">
+            <Typography color="blue-gray" className="font-bold text-2xl">
+              {title}
+            </Typography>
+            <Typography color="red" className="font-bold text-2xl ">
               Rs {price}
-            </p>
+            </Typography>
           </div>
-
-          <button className="btn btn-sm " onClick={add2cartHandler}>
+          {/* <Typography
+            variant="small"
+            color="gray"
+            className="font-normal opacity-75"
+          >
+            With plenty of talk and listen time, voice-activated Siri access,
+            and an available wireless charging case.
+          </Typography> */}
+        </CardBody>
+        <CardFooter className="pt-0">
+          <Button
+            ripple={false}
+            fullWidth={true}
+            onClick={add2cartHandler}
+            className="bg-green-800 text-gray-300 shadow-none hover:shadow-none hover:scale-105 focus:shadow-none focus:scale-105 active:scale-100"
+          >
             Add to Cart
-          </button>
-        </div>
-      </div>
+          </Button>
+        </CardFooter>
+      </Card>
     </>
   );
 };
 
-export default Card;
+export default CardComp;

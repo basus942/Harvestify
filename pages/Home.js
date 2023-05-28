@@ -3,6 +3,7 @@ import Image from "next/image";
 
 import Addproduct from "@/components/Products/Addproducts";
 import Products from "@/components/Products/Products";
+import Contactus from "@/components/Contactus";
 
 const HomePage = () => {
   return (
@@ -16,6 +17,7 @@ const HomePage = () => {
           src="/6477332.jpg"
         ></Image>
       </div>
+
       <div className="font-bold text-white flex items-center justify-center pt-10 pb-3 text-2xl ">
         Products
       </div>
@@ -24,9 +26,8 @@ const HomePage = () => {
         fruits at Harvestify.
       </h3>
       <Products />
-      <div className="grid mt-10 place-items-center">
-        <Addproduct />
-      </div>
+      <Contactus />
+      <div className="grid mt-10 place-items-center"></div>
     </>
   );
 };

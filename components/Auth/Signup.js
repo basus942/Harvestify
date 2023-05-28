@@ -1,5 +1,5 @@
 import { useState, useRef } from "react";
-import { auth } from "../../Firebase";
+import { auth } from "../Firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { useRouter } from "next/router";
 const Signup = () => {
