@@ -1,7 +1,11 @@
-import { useRef, useState } from "react";
-
+import { useRef, useState, useContext } from "react";
+import { useProtectedRoute } from "@/context/ProtectedRoute";
 import { auth } from "../Firebase";
-import { signInWithEmailAndPassword } from "firebase/auth";
+import {
+  signInWithEmailAndPassword,
+  signInWithPopup,
+  GoogleAuthProvider,
+} from "firebase/auth";
 import { useRouter } from "next/router";
 import { Spinner } from "@material-tailwind/react";
 
@@ -11,7 +15,16 @@ const Login = () => {
   const passref = useRef("");
 
   const router = useRouter();
+  const User = useProtectedRoute();
+  const provider = new GoogleAuthProvider();
 
+  const signInwithGoogleHandler = async () => {
+    try {
+      const result = signInWithPopup(auth, provider);
+    } catch (error) {
+      console.log(error);
+    }
+  };
   const handleSubmit = async (e) => {
     setLoading(true);
     e.preventDefault();
@@ -30,6 +43,10 @@ const Login = () => {
       router.push("/Home");
     }
   };
+  if (User) {
+    router.replace("/Home");
+    return null;
+  }
   return (
     <>
       {loading ? (
@@ -57,6 +74,7 @@ const Login = () => {
                   <div className="mt-5">
                     <button
                       type="button"
+                      onClick={signInwithGoogleHandler}
                       className="w-full py-3 px-4 inline-flex justify-center items-center gap-2 rounded-md border font-medium bg-white text-gray-700 shadow-sm align-middle hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 transition-all text-sm dark:bg-gray-800 dark:hover:bg-slate-800 dark:border-gray-700 dark:text-gray-400 dark:hover:text-white dark:focus:ring-offset-gray-800"
                     >
                       <svg

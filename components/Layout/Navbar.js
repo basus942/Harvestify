@@ -10,6 +10,7 @@ import { cartContext } from "@/context/Context";
 
 const Navabar = () => {
   const User = useContext(AuthContext);
+
   const router = useRouter();
   const signOutHandler = () => {
     signOut(auth)
@@ -122,7 +123,13 @@ const Navabar = () => {
                 className="btn btn-ghost mx-5 btn-circle avatar"
               >
                 <div className="w-10 rounded-full">
-                  <img src="https://gifdb.com/images/high/evil-eye-ghost-dark-cartoon-7kmwr51ewzn7d0tl.gif" />
+                  <img
+                    src={
+                      User.photoURL
+                        ? User.photoURL
+                        : "https://gifdb.com/images/high/evil-eye-ghost-dark-cartoon-7kmwr51ewzn7d0tl.gif"
+                    }
+                  />
                 </div>
               </label>
               <ul

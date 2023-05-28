@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 
 import { cartContext } from "@/context/Context";
 import Filter from "../filter";
@@ -20,7 +20,7 @@ const Products = () => {
       <div className="flex items-center justify-center">
         <Filter child={upLift} />
       </div>
-      <div className="flex items-center justify-center flex-wrap mb-24">
+      <div className="flex items-center justify-center  flex-wrap mb-24">
         {productList ? (
           productList
             .filter((item) => (filter === "All" ? true : item.type === filter))

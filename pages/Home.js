@@ -1,11 +1,13 @@
 import React from "react";
 import Image from "next/image";
 
-import Addproduct from "@/components/Products/Addproducts";
+import { useProtectedRoute } from "@/context/ProtectedRoute";
 import Products from "@/components/Products/Products";
 import Contactus from "@/components/Contactus";
 
 const HomePage = () => {
+  const User = useProtectedRoute();
+  console.log(User);
   return (
     <>
       <div className="p-10 bg-[rgb(3,130,66)]">
