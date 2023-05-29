@@ -8,4 +8,7 @@ module.exports = withMT({
   ],
   theme: ["luxury"],
   plugins: [require("daisyui")],
+  daisyui: {
+    themes: ["forest"],
+  },
 });

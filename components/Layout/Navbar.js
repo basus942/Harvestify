@@ -37,7 +37,7 @@ const Navabar = () => {
 
       {User ? (
         <>
-          <div className="btn btn-ghost mx-5">
+          <div className="btn btn-ghost mx-1">
             <Link href="/Blog">Blogs</Link>
           </div>
           <div className="btn btn-ghost mx-5">
@@ -69,7 +69,7 @@ const Navabar = () => {
               </label>
               <div
                 tabIndex={0}
-                className="mt-3 card card-compact dropdown-content w-52 bg-base-100 shadow"
+                className="mt-3 card card-compact dropdown-content w-52 bg-base-100 shadow mx-3"
               >
                 {cart.length == 0 ? (
                   <div className="flex flex-col items-center mt-12">

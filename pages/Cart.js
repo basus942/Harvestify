@@ -18,7 +18,7 @@ const Cart = () => {
 
   if (cart.length === 0) {
     return (
-      <div className="flex flex-col items-center mt-12 h-screen">
+      <div className="flex flex-col items-center mt-12 h-max">
         <h2 className="text-3xl font-bold mb-5">
           Your Cart is <span className="text-red-600">Empty</span>
         </h2>

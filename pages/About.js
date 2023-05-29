@@ -2,7 +2,7 @@ import React from "react";
 
 const About = () => {
   return (
-    <div className="hero min-h-screen bg-base-200">
+    <div className="grid place-content-center ">
       <div className="hero-content flex-col lg:flex-row">
         <img
           src="https://media.istockphoto.com/id/171579643/photo/tomato-greenhouse.jpg?s=612x612&w=0&k=20&c=BLtIrrBprkZlIHNfSYIhkm3aebVUjqxsS-Yoqa1ss08="
