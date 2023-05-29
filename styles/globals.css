@@ -244,3 +244,93 @@ color: #40513B;
   background-color: #131312;
 }
 
+/* loading icoon */
+
+@keyframes honeycomb {
+  0%, 20%, 80%, 100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  30%, 70% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.honeycomb {
+  height: 6rem; /* 24px */
+  position: relative;
+  width: 6rem; /* 24px */
+}
+
+.honeycomb-item {
+  animation: honeycomb 2.1s infinite backwards;
+  background: #f3f3f3;
+  height: 3rem; /* 12px */
+  margin-top: 1.5rem; /* 6px */
+  position: absolute;
+  width: 6rem; /* 24px */
+}
+
+.honeycomb-item::after,
+.honeycomb-item::before {
+  content: '';
+  border-left: 3rem solid transparent; /* 12px */
+  border-right: 3rem solid transparent; /* 12px */
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+.honeycomb-item::after {
+  top: -1.5rem; /* 6px */
+  border-bottom: 1.5rem solid #f3f3f3;
+}
+
+.honeycomb-item::before {
+  bottom: -1.5rem; /* 6px */
+  border-top: 1.5rem solid #f3f3f3;
+}
+
+.honeycomb-item:nth-child(1) {
+  animation-delay: 0s;
+  left: -7rem; /* -28px */
+  top: 0;
+}
+
+.honeycomb-item:nth-child(2) {
+  animation-delay: 0.1s;
+  left: -3.5rem; /* -14px */
+  top: 5.5rem; /* 22px */
+}
+
+.honeycomb-item:nth-child(3) {
+  animation-delay: 0.2s;
+  left: 3.5rem; /* 14px */
+  top: 5.5rem; /* 22px */
+}
+
+.honeycomb-item:nth-child(4) {
+  animation-delay: 0.3s;
+  left: 7rem; /* 28px */
+  top: 0;
+}
+
+.honeycomb-item:nth-child(5) {
+  animation-delay: 0.4s;
+  left: 3.5rem; /* 14px */
+  top: -5.5rem; /* -22px */
+}
+
+.honeycomb-item:nth-child(6) {
+  animation-delay: 0.5s;
+  left: -3.5rem; /* -14px */
+  top: -5.5rem; /* -22px */
+}
+
+.honeycomb-item:nth-child(7) {
+  animation-delay: 0.6s;
+  left: 0;
+  top: 0;
+}

@@ -11,6 +11,7 @@ import {
 
 const CardComp = ({ title, image, price }) => {
   const [alert, setAlert] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
   const { dispatch } = cartContext();
   const add2cartHandler = () => {
     dispatch({
@@ -55,7 +56,11 @@ const CardComp = ({ title, image, price }) => {
           </div>
         </div>
       )}
-      <Card className="w-96 bg-green-400">
+      <Card
+        className="w-96 bg-green-400"
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
         <CardHeader shadow={false} floated={false} className="h-96">
           <img src={image} className="w-full h-full object-cover" />
         </CardHeader>
@@ -78,14 +83,16 @@ const CardComp = ({ title, image, price }) => {
           </Typography> */}
         </CardBody>
         <CardFooter className="pt-0">
-          <Button
-            ripple={false}
-            fullWidth={true}
-            onClick={add2cartHandler}
-            className="bg-green-800 text-gray-300 shadow-none hover:shadow-none hover:scale-105 focus:shadow-none focus:scale-105 active:scale-100"
-          >
-            Add to Cart
-          </Button>
+          {isHovered && (
+            <Button
+              ripple={false}
+              fullWidth={true}
+              onClick={add2cartHandler}
+              className="bg-green-800  text-gray-300 shadow-none hover:shadow-none transition-transform ease-in-out "
+            >
+              Add to Cart
+            </Button>
+          )}
         </CardFooter>
       </Card>
     </>

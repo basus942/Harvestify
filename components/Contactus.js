@@ -135,46 +135,8 @@ const Contactus = () => {
           {/* End Card */}
 
           {/* Knowledgebase */}
-          <div className="flex flex-col items-center bg-[#038242]">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="w-6 h-6 mt-1.5 text-gray-800 dark:text-gray-200"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M19 9l-7 7-7-7"
-              />
-            </svg>
-            <h3 className="mt-4 text-lg font-semibold text-gray-200 dark:text-gray-200">
-              Harvestify
-            </h3>
-            <p className="mt-1 text-sm text-gray-300">
-              Visit our About us for FAQs.
-            </p>
-            <a
-              href="/About"
-              className="mt-2 inline-flex items-center gap-x-2 text-sm font-medium text-gray-300 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200"
-            >
-              <span>Learn more</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-4 w-4"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm0-2a6 6 0 100-12 6 6 0 000 12zM7 9a1 1 0 00-1 1v1a1 1 0 002 0V9a1 1 0 00-1-1zm2.707-3.707a1 1 0 00-1.414 0L6 8.586A1 1 0 007 10h6a1 1 0 00.707-1.707L11.414 5.293a1 1 0 00-1.707-1.414z"
-                  clipRule="evenodd"
-                />
-              </svg>
-            </a>
-          </div>
+          <img src="https://images.unsplash.com/photo-1461354464878-ad92f492a5a0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"></img>
+
           {/* End Knowledgebase */}
         </div>
       </div>

@@ -70,9 +70,15 @@ const Navabar = () => {
               >
                 {cart.length == 0 ? (
                   <div className="flex flex-col items-center mt-12">
-                    <h2 className="text-3xl font-bold mb-5">
+                    <h2 className="text-3xl font-bold ">
                       Your Cart is <span className="text-red-600">Empty</span>
                     </h2>
+                    <button
+                      className="btn btn-primary bottom-2 btn-block  "
+                      onClick={() => router.push("/Cart")}
+                    >
+                      View cart
+                    </button>
                   </div>
                 ) : (
                   <div className="max-h-80 overflow-y-auto ">

@@ -8,6 +8,7 @@ import {
 } from "firebase/auth";
 import { useRouter } from "next/router";
 import { Spinner } from "@material-tailwind/react";
+import Loading from "@/components/Loading";
 
 const Login = () => {
   const [loading, setLoading] = useState(false);
@@ -55,7 +56,7 @@ const Login = () => {
     <>
       {loading ? (
         <div className="grid place-items-center mt-60">
-          <Spinner className="h-12 w-12" />
+          <Loading />
         </div>
       ) : (
         <div className="h-full">

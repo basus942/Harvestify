@@ -6,11 +6,11 @@ const About = () => {
       <div className="hero-content flex-col lg:flex-row">
         <img
           src="https://media.istockphoto.com/id/171579643/photo/tomato-greenhouse.jpg?s=612x612&w=0&k=20&c=BLtIrrBprkZlIHNfSYIhkm3aebVUjqxsS-Yoqa1ss08="
-          className="max-w-xl rounded-lg shadow-2xl"
+          className="max-w-xl rounded-3xl animate-bounce "
           alt="banner"
         />
-        <div>
-          <h1 className="text-5xl font-bold">About Harvestify</h1>
+        <div className="p-9">
+          <h1 className="text-5xl m-8 font-bold">About Harvestify</h1>
           <p className="text-lg mb-8">
             Welcome to Harvestify, your one-stop destination for fresh and
             healthy fruits and vegetables. We believe that good nutrition is the

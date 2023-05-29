@@ -1,11 +1,24 @@
 import React from "react";
+import Wave from "react-wavify";
 
 export const Footer = () => {
   return (
-    <footer className="footer footer-center p-4 bg-base-300 text-base-content ">
-      <div>
-        <p> © 2023 Harvestify. All rights reserved.</p>
-      </div>
-    </footer>
+    <div className="mt-60">
+      <footer className="footer footer-center  bg-[#038242]">
+        <Wave
+          fill="#038242"
+          paused={false}
+          options={{
+            height: 5,
+            amplitude: 80,
+            speed: 0.15,
+            points: 6,
+          }}
+        />
+        <div className="">
+          <p> © 2023 Harvestify. All rights reserved.</p>
+        </div>
+      </footer>
+    </div>
   );
 };
