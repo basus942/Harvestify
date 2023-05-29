@@ -6,7 +6,7 @@ const About = () => {
       <div className="hero-content flex-col lg:flex-row">
         <img
           src="https://media.istockphoto.com/id/171579643/photo/tomato-greenhouse.jpg?s=612x612&w=0&k=20&c=BLtIrrBprkZlIHNfSYIhkm3aebVUjqxsS-Yoqa1ss08="
-          className="max-w-xl rounded-3xl animate-bounce "
+          className="max-w-xl rounded-3xl "
           alt="banner"
         />
         <div className="p-9">

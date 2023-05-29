@@ -7,7 +7,6 @@ import {
   GoogleAuthProvider,
 } from "firebase/auth";
 import { useRouter } from "next/router";
-import { Spinner } from "@material-tailwind/react";
 import Loading from "@/components/Loading";
 
 const Login = () => {

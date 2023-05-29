@@ -18,11 +18,11 @@ export const ProtectedRoute = ({ children }) => {
     return () => unsubscribe(); // Cleanup the subscription when the component unmounts
   }, []); // Empty dependency array ensures the effect runs only once
 
-  useEffect(() => {
-    if (!user) {
-      router.push("/Login");
-    }
-  }, [user]); // Run the effect whenever user or router changes
+  // useEffect(() => {
+  //   if (!user) {
+  //     router.push("/Login");
+  //   }
+  // }, [user]); // Run the effect whenever user or router changes
 
   return <AuthContext.Provider value={user}>{children}</AuthContext.Provider>;
 };
