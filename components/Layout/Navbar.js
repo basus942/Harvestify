@@ -38,6 +38,9 @@ const Navabar = () => {
       {User ? (
         <>
           <div className="btn btn-ghost mx-5">
+            <Link href="/Blog">Blogs</Link>
+          </div>
+          <div className="btn btn-ghost mx-5">
             <Link href="/About">About Us</Link>
           </div>
           <div className="flex-none">
