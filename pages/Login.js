@@ -8,6 +8,7 @@ import {
 } from "firebase/auth";
 import { useRouter } from "next/router";
 import Loading from "@/components/Loading";
+import Link from "next/link";
 
 const Login = () => {
   const [loading, setLoading] = useState(false);
@@ -71,7 +72,7 @@ const Login = () => {
                       Don't have an account yet?
                     </p>
                     <div className="text-blue-600 decoration-2 hover:underline font-medium">
-                      Sign up here
+                      <Link href="/Signup">Sign up here</Link>
                     </div>
                   </div>
 

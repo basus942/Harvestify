@@ -8,6 +8,7 @@ import {
   Typography,
   Button,
 } from "@material-tailwind/react";
+import Image from "next/image";
 
 const CardComp = ({ title, image, price }) => {
   const [alert, setAlert] = useState(false);
@@ -62,7 +63,13 @@ const CardComp = ({ title, image, price }) => {
         onMouseLeave={() => setIsHovered(false)}
       >
         <CardHeader shadow={false} floated={false} className="h-96">
-          <img src={image} className="w-full h-full object-cover" />
+          <Image
+            src={image}
+            width={500}
+            height={500}
+            priority={false}
+            className="w-full h-full object-cover"
+          />
         </CardHeader>
         <CardBody>
           <div className="flex items-center justify-between mb-2">

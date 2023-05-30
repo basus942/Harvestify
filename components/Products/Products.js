@@ -21,7 +21,7 @@ const Products = () => {
         <Filter child={upLift} />
       </div>
       <div className="flex items-center justify-center  flex-wrap mb-24">
-        {productList ? (
+        {productList &&
           productList
             .filter((item) => (filter === "All" ? true : item.type === filter))
             .map((item) => (
@@ -32,10 +32,7 @@ const Products = () => {
                   price={item.price}
                 />
               </div>
-            ))
-        ) : (
-          <p>Loading...</p>
-        )}
+            ))}
       </div>
     </>
   );

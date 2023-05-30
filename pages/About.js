@@ -1,12 +1,16 @@
 import React from "react";
+import Image from "next/image";
 
 const About = () => {
   return (
     <div className="grid place-content-center ">
       <div className="hero-content flex-col lg:flex-row">
-        <img
+        <Image
           src="https://media.istockphoto.com/id/171579643/photo/tomato-greenhouse.jpg?s=612x612&w=0&k=20&c=BLtIrrBprkZlIHNfSYIhkm3aebVUjqxsS-Yoqa1ss08="
-          className="max-w-xl rounded-3xl "
+          className=" rounded-3xl "
+          width={500}
+          height={500}
+          loading="lazy"
           alt="banner"
         />
         <div className="p-9">
