@@ -11,7 +11,6 @@ const Products = () => {
   const upLift = (e) => {
     setFilter(e);
   };
-  console.log(state.cart);
 
   const { productList } = state;
 

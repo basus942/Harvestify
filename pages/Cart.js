@@ -14,7 +14,6 @@ const Cart = () => {
   useEffect(() => {
     setTotal(cart.reduce((acc, current) => acc + Number(current.price), 0));
   }, []);
-  console.log(total);
 
   if (cart.length === 0) {
     return (
@@ -39,7 +38,6 @@ const Cart = () => {
       payload: id,
     });
   };
-  console.log(cart);
 
   return (
     <div className="flex justify-center items-center m-10 bg-opacity-75 text-black ">

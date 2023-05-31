@@ -1,7 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-import { auth } from "../../../Firebase";
-import { signOut } from "firebase/auth";
 import { useRouter } from "next/router";
 import { AuthContext } from "@/context/ProtectedRoute";
 import { useContext } from "react";
@@ -11,7 +9,6 @@ import NavabarProfilrMenu from "./NavabarProfilrMenu";
 
 const Navabar = () => {
   const User = useContext(AuthContext);
-  console.log(User);
 
   const router = useRouter();
   const {
@@ -31,13 +28,16 @@ const Navabar = () => {
       </div>
       {/* {User ? ( */}
       <>
-        <div className="btn btn-ghost mx-1">
+        <div className="btn btn-ghost mx-2">
           <Link href="/Blog">Blogs</Link>
         </div>
-        <div className="btn btn-ghost mx-5">
-          <Link href="/About">About Us</Link>
+        <div className="btn btn-ghost mx-2">
+          <Link href="#AboutUs">About Us</Link>
         </div>
-        <div className="flex-none">
+        <div className="btn btn-ghost mx-2">
+          <Link href="#ContactUs">Contact Us</Link>
+        </div>
+        <div className="flex-none ">
           <div className="dropdown dropdown-end">
             <label tabIndex={0} className="btn btn-ghost  btn-circle">
               <div className="indicator">
