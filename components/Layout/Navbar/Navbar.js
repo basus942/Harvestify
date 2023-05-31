@@ -32,10 +32,10 @@ const Navabar = () => {
           <Link href="/Blog">Blogs</Link>
         </div>
         <div className="btn btn-ghost mx-2">
-          <Link href="#AboutUs">About Us</Link>
+          <Link href="/Home#AboutUs">About Us</Link>
         </div>
         <div className="btn btn-ghost mx-2">
-          <Link href="#ContactUs">Contact Us</Link>
+          <Link href="/Home#ContactUs">Contact Us</Link>
         </div>
         <div className="flex-none ">
           <div className="dropdown dropdown-end">
