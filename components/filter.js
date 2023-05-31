@@ -9,7 +9,7 @@ const Filter = ({ child }) => {
   };
 
   return (
-    <div className="btn-group">
+    <div className="btn-group mb-6">
       <button
         className={`btn ${activeFilter === "Fruit" ? "btn-active" : "filter"}`}
         onClick={() => filterHandler("Fruit")}

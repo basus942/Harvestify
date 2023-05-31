@@ -83,15 +83,15 @@ const AddBlog = () => {
         ))}
       </div>
 
-      <div className="my-20 grid items-center lg:grid-cols-2 gap-6 lg:gap-16">
+      {/* <div className="my-20 grid items-center lg:grid-cols-2 gap-6 lg:gap-16">
         <div className="flex flex-col border rounded-xl p-4 sm:p-6 lg:p-8 dark:border-gray-700 ">
           <h2 className="mb-8 p-3 text-xl font-semibold text-gray-100 dark:text-gray-200">
             Add Product
           </h2>
           <form onSubmit={handleSubmit}>
-            <div className="grid gap-4">
-              {/* Grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="grid gap-4"> */}
+      {/* Grid */}
+      {/* <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label
                     htmlFor="title"
@@ -125,10 +125,10 @@ const AddBlog = () => {
                     placeholder="Image Url"
                   />
                 </div>
-              </div>
-              {/* End Grid */}
+              </div> */}
+      {/* End Grid */}
 
-              <div>
+      {/* <div>
                 <label
                   htmlFor="title"
                   className="block text-sm mb-2  font-bold"
@@ -160,9 +160,9 @@ const AddBlog = () => {
                   className="py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400"
                   placeholder="Author "
                 />
-              </div>
+              </div> */}
 
-              <div>
+      {/* <div>
                 <label
                   htmlFor="title"
                   className="block text-sm mb-2  font-bold"
@@ -188,9 +188,9 @@ const AddBlog = () => {
                 Post Blog
               </Button>
             </div>
-          </form>
-        </div>
-      </div>
+          </form> */}
+      {/* </div>
+      </div>  */}
     </div>
   );
 };

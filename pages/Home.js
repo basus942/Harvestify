@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { m, LazyMotion, domAnimation } from "framer-motion";
 
 import { useProtectedRoute } from "@/context/ProtectedRoute";
 
@@ -15,34 +15,37 @@ const HomePage = () => {
   return (
     <>
       <div className="p-16 bg-[rgb(3,130,66)]">
-        <motion.div
-          initial="hidden"
-          animate="visible"
-          variants={{
-            hidden: {
-              scale: 0.8,
-            },
-            visible: {
-              scale: 1,
-              opacity: 1,
-              transition: {
-                type: "spring",
-                delay: 0.2,
-                duration: 2,
+        <LazyMotion features={domAnimation}>
+          <m.div
+            initial="hidden"
+            animate="visible"
+            variants={{
+              hidden: {
+                scale: 0.6,
               },
-            },
-          }}
-        >
-          <Image
-            className="mx-auto w-auto h-auto"
-            width={1000}
-            height={1000}
-            quality={80}
-            priority={true}
-            alt="banner"
-            src="/6477332.jpg"
-          ></Image>
-        </motion.div>
+              visible: {
+                scale: 1,
+                opacity: 1,
+                rotate: 360 * 2,
+                transition: {
+                  type: "spring",
+                  delay: 0.2,
+                  duration: 2,
+                },
+              },
+            }}
+          >
+            <Image
+              className="mx-auto w-auto h-auto"
+              width={1000}
+              height={1000}
+              quality={80}
+              priority={true}
+              alt="banner"
+              src="/6477332.jpg"
+            ></Image>
+          </m.div>
+        </LazyMotion>
       </div>
 
       <div className="font-bold text-white flex items-center justify-center pt-28 pb-10 text-3xl ">

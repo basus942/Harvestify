@@ -10,7 +10,7 @@ const NavabarProfilrMenu = () => {
   const signOutHandler = () => {
     signOut(auth)
       .then(() => {
-        router.push("/Login");
+        router.push("/Auth/Login");
       })
       .catch((err) => console.log(err));
   };
@@ -31,11 +31,10 @@ const NavabarProfilrMenu = () => {
         <a>Settings</a>
       </li>
       <li>
-        {console.log(User)}
         {User ? (
           <a onClick={signOutHandler}>Logout</a>
         ) : (
-          <Link href="/Login">Login</Link>
+          <Link href="/Auth/Login">Login</Link>
         )}
       </li>
     </ul>

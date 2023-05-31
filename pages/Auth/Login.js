@@ -7,7 +7,7 @@ import {
   GoogleAuthProvider,
 } from "firebase/auth";
 import { useRouter } from "next/router";
-import Loading from "@/components/Loading";
+import Loading from "@/components/Utilities/Loading";
 import Link from "next/link";
 
 const Login = () => {

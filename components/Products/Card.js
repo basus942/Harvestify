@@ -9,10 +9,11 @@ import {
   Button,
 } from "@material-tailwind/react";
 import Image from "next/image";
+import { m, LazyMotion, domAnimation } from "framer-motion";
 
 const CardComp = ({ title, image, price }) => {
   const [alert, setAlert] = useState(false);
-  const [isHovered, setIsHovered] = useState(false);
+
   const { dispatch } = cartContext();
   const add2cartHandler = () => {
     dispatch({
@@ -57,20 +58,20 @@ const CardComp = ({ title, image, price }) => {
           </div>
         </div>
       )}
-      <Card
-        className="w-96 bg-green-400"
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-      >
-        <CardHeader shadow={false} floated={false} className="h-96">
-          <Image
-            src={image}
-            width={500}
-            height={500}
-            priority={false}
-            className="w-full h-full object-cover"
-          />
-        </CardHeader>
+      <Card className="w-96 bg-green-400">
+        <LazyMotion features={domAnimation}>
+          <m.div whileHover={{ y: -30 }}>
+            <CardHeader shadow={false} floated={false} className="h-96">
+              <Image
+                src={image}
+                width={500}
+                height={500}
+                priority={false}
+                className="w-full h-full object-cover"
+              />
+            </CardHeader>
+          </m.div>
+        </LazyMotion>
         <CardBody>
           <div className="flex items-center justify-between mb-2">
             <Typography color="blue-gray" className="font-bold text-2xl">
@@ -90,16 +91,14 @@ const CardComp = ({ title, image, price }) => {
           </Typography> */}
         </CardBody>
         <CardFooter className="pt-0">
-          {isHovered && (
-            <Button
-              ripple={false}
-              fullWidth={true}
-              onClick={add2cartHandler}
-              className="bg-green-800  text-gray-300 shadow-none hover:shadow-none transition-transform ease-in-out "
-            >
-              Add to Cart
-            </Button>
-          )}
+          <Button
+            ripple={false}
+            className="bg-green-700"
+            fullWidth={true}
+            onClick={add2cartHandler}
+          >
+            Add to Cart
+          </Button>
         </CardFooter>
       </Card>
     </>
