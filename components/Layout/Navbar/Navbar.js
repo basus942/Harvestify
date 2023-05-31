@@ -16,7 +16,7 @@ const Navabar = () => {
   } = cartContext();
 
   return (
-    <div className="navbar w-screen sm:w-screen bg-[#038242]">
+    <div className="navbar   bg-[#038242]">
       <div className="flex-1">
         <Image
           src="/default.png"
@@ -77,7 +77,6 @@ const Navabar = () => {
                 <Image
                   width={100}
                   height={100}
-                  alt="User icon"
                   src={
                     User
                       ? User.photoURL === null
