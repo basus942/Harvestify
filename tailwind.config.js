@@ -6,7 +6,7 @@ module.exports = withMT({
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  theme: ["luxury"],
+  theme: {},
   plugins: [require("daisyui")],
   daisyui: {
     themes: ["forest"],

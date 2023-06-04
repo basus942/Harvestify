@@ -6,6 +6,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <Navabar />
+
       {children}
       <Footer />
     </>

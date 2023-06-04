@@ -58,26 +58,26 @@ const CardComp = ({ title, image, price }) => {
           </div>
         </div>
       )}
-      <Card className="w-96 bg-green-400">
+      <Card className="w-64 bg-green-400">
         <LazyMotion features={domAnimation}>
           <m.div whileHover={{ y: -30 }}>
-            <CardHeader shadow={false} floated={false} className="h-96">
+            <CardHeader shadow={false} floated={false} className="h-36">
               <Image
                 src={image}
                 width={500}
                 height={500}
-                priority={false}
-                className="w-full h-full object-cover"
+                quality={80}
+                className="w-fit  "
               />
             </CardHeader>
           </m.div>
         </LazyMotion>
         <CardBody>
           <div className="flex items-center justify-between mb-2">
-            <Typography color="blue-gray" className="font-bold text-2xl">
+            <Typography color="blue-gray" className="font-bold text-xl">
               {title}
             </Typography>
-            <Typography color="red" className="font-bold text-2xl ">
+            <Typography color="red" className="font-bold text-xl ">
               Rs {price}
             </Typography>
           </div>

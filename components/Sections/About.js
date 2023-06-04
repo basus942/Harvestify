@@ -4,7 +4,7 @@ import { m, LazyMotion, useInView, domAnimation } from "framer-motion";
 const About = () => {
   const ref = useRef(null);
   const isInView = useInView(ref);
-  const heading = "About Us";
+
   return (
     <div id="AboutUs" className="grid place-content-center " ref={ref}>
       <div className="hero-content flex-col lg:flex-row">
@@ -15,12 +15,14 @@ const About = () => {
             variants={{
               hidden: {
                 opacity: 0,
+                y: "10vh",
               },
               visible: {
                 opacity: 1,
+                y: 0,
 
                 transition: {
-                  delay: 1,
+                  delay: 0.755,
                   duration: 0.5,
                 },
               },
@@ -29,10 +31,9 @@ const About = () => {
             <Image
               src="https://media.istockphoto.com/id/171579643/photo/tomato-greenhouse.jpg?s=612x612&w=0&k=20&c=BLtIrrBprkZlIHNfSYIhkm3aebVUjqxsS-Yoqa1ss08="
               className=" rounded-3xl "
-              width={2000}
-              height={2000}
-              priority={false}
-              loading="lazy"
+              width={1200}
+              height={1200}
+              quality={70}
               alt="banner"
             />
           </m.div>
@@ -58,25 +59,25 @@ const About = () => {
                 },
               }}
             >
-              <span className="text-5xl m-8 font-bold flex" ref={ref}>
+              <span className="text-4xl m-8 font-bold flex" ref={ref}>
                 About Us
               </span>
 
-              <p className="text-lg mb-8">
+              <p className="text-md mb-8">
                 Welcome to Harvestify, your one-stop destination for fresh and
                 healthy fruits and vegetables. We believe that good nutrition is
                 the foundation for a healthy and fulfilling life, and that's why
                 we are committed to providing you with the highest quality
                 produce.
               </p>
-              <p className="text-lg mb-8">
+              <p className="text-md mb-8">
                 At Harvestify, we work directly with local farmers and suppliers
                 who share our passion for sustainable and organic farming
                 practices. This allows us to bring you a wide variety of
                 seasonal fruits and vegetables, free from harmful pesticides and
                 chemicals.
               </p>
-              <p className="text-lg mb-8">
+              <p className="text-md mb-8">
                 Our team is dedicated to ensuring that your online shopping
                 experience is convenient and reliable. From hand-picking each
                 item to carefully packaging your order, we strive to deliver
@@ -84,7 +85,7 @@ const About = () => {
                 exceptional customer service and prompt delivery to ensure your
                 satisfaction.
               </p>
-              <p className="text-lg">
+              <p className="text-md">
                 Thank you for choosing Harvestify as your trusted source for
                 farm-fresh produce. Join us in embracing a healthier lifestyle
                 and experience the difference of truly delicious fruits and

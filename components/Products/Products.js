@@ -22,7 +22,7 @@ const Products = () => {
         <Filter child={upLift} />
       </div>
       <div
-        className="flex items-center justify-center  flex-wrap mb-24"
+        className="flex items-center justify-center  flex-wrap mb-10"
         ref={ref}
       >
         {productList &&

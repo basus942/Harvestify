@@ -10,6 +10,9 @@ const nextConfig = {
       "www.saberhealth.com",
       "gifdb.com",
       "media.istockphoto.com",
+      "images.ctfassets.net",
+      "unsplash.com",
+      "lh3.googleusercontent.com",
     ],
   },
 };

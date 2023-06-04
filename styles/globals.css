@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 :root {
-  --max-width: 1100px;
+
   --border-radius: 12px;
   --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
     'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
@@ -80,168 +80,40 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+
 }
 
 html{
   background-color: default;
+  width:100%;padding: 0;
+  margin: 0;
 }
 body {
-  max-width: 100vw;
-  background-color: default;
-
-  overflow-x: hidden;
+  width:100%;
+  background-color: default;overflow-x: hidden;
+  
+  
 }
 
-body {
-  color: grey;
-  background-color: default;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
 
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }
 }
-.items{
-  
-            font-size: "15px";
-            display: flex;
-            flex-wrap: wrap;
-            font-weight: "bold";
-}
-.card {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  background-color: #9DC08B;
-  color: #1B1818  ;
-  border-radius: 5%;
-  padding: 10px;
-  width: 400px;
-  height: 350px;
-  margin: 20px;
-  box-shadow: 5px 8px 10px #20291d;
-  position: relative;
-  transition: transform 0.3s ease;
-}
-.card:hover{
-  transform: scale(1.05);
-}
 
 
 
-.card-body {
-  padding: 8px;
-  font-size: 1rem;
-  margin: 0;
-  position: absolute;
-  bottom: 0px;
-  width: 100%;
-}
-
-.card-title {
-  font-size: 1.25rem;
-  margin: 0;
-  margin-bottom: 8px;
-}
-
-.card-price {
-  font-size: 1.25rem;
-  margin: 0;
-  color: rgb(235, 6, 6);
-  font-weight: 900;
-
-}
-
-.addtocard{
-  right:0;
-  bottom: 0;
-}
-.navul{
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #1B1818;
-  
-}
-
-.nav{
-float: right;
-display: block;
-color: #609966;
-text-align: center;
-padding: 20px 30px;
-font-weight: bolder;
-}
-.navHeading{
-  float: Left;
-  display: block;
-  color: goldenrod;
-  text-align: center;
-  padding: 5px 50px;
-  font-size: 2.75rem;
-  text-decoration: none;
-  font-weight: bolder;
-  }
-.nav:hover{
-background-color: #86b46e;
-color: #40513B;
-}
-.form{
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  background-color: #609966;
-  color: black;
-  font-size:large;
-
-}
-.centerContainer{
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-
-}
-
-.form label {
-  display: inline-block;
-  text-align: left;
-  width: 150px;
-  font-size: 15px;
-  font-weight: 600;
-}
 
 
-.row{
-  display: flex;
-
-}
-.spanauth{
-  font-size: 2rem;
-  font-weight: bolder;
-  color: black;
-  background-color:#8ecc94 ;
-  border-radius: 5px;
-  margin: auto 10px;
-  border: solid #213623;
-  cursor: grab;
-  transition-duration: 0.6s;
-}
-
-.footer {
+.progress-bar {
   position: fixed;
-  bottom: 0;
-  width: 100%;
-  padding: 20px 0;
-  text-align: center;
-  background-color: #131312;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 10px;
+  background: var(--red);
+  transform-origin: 0%;
 }
 
 /* loading icoon */
