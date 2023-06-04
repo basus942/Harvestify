@@ -6,7 +6,9 @@ import Navlinks from "./Navlinks";
 import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
 import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
 import { m, LazyMotion, domAnimation } from "framer-motion";
+import { useMediaQuery } from "@mui/material";
 const Navabar = () => {
+  const isSmallScreen = useMediaQuery("(max-width:768px)");
   const User = useContext(AuthContext);
   const [openhamburger, setOpenhamburger] = useState(false);
 
@@ -40,23 +42,27 @@ const Navabar = () => {
           </div>
         </div>
       </div>
-      <LazyMotion features={domAnimation}>
-        {openhamburger && (
-          <m.div
-            initial={{
-              x: 0,
-              y: 0,
+      {isSmallScreen && (
+        <LazyMotion features={domAnimation}>
+          {openhamburger && (
+            <m.div
+              initial={{
+                x: 0,
+                y: 0,
 
-              // height: "100vh",
-              width: "100vh",
-            }}
-            animate={{ x: 0, y: 0 }}
-            className=" bg-[#163827] z-5"
-          >
-            <Navlinks />
-          </m.div>
-        )}
-      </LazyMotion>
+                // height: "100vh",
+                width: "100vh",
+              }}
+              animate={{ x: 0, y: 0 }}
+              className=" bg-[#163827]
+
+               z-5 "
+            >
+              <Navlinks />
+            </m.div>
+          )}
+        </LazyMotion>
+      )}
     </>
   );
 };

@@ -14,7 +14,7 @@ const NavbarCartMenu = () => {
     <>
       {User ? (
         cart.length == 0 ? (
-          <div className="flex flex-col items-center mt-12">
+          <div className="flex flex-col items-center mt-12 bg-white">
             <h2 className="text-3xl font-bold ">
               Your Cart is <span className="text-red-600">Empty</span>
             </h2>
@@ -26,7 +26,7 @@ const NavbarCartMenu = () => {
             </button>
           </div>
         ) : (
-          <div className="max-h-80 overflow-y-auto ">
+          <div className="max-h-80 w-max overflow-x-hidden rounded-lg p-3 mr-3 bg-[#163827] ">
             <span className="text-3xl font-extrabold m-10 ">Cart</span>
             {cart.map((item) => (
               <div>
