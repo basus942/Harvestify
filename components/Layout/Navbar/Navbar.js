@@ -51,7 +51,7 @@ const Navabar = () => {
                 y: 0,
 
                 // height: "100vh",
-                width: "100vh",
+                width: "100%",
               }}
               animate={{ x: 0, y: 0 }}
               className=" bg-[#163827]
