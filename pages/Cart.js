@@ -78,7 +78,9 @@ const Cart = () => {
           Subtotal({cart.length}): ₹{total}
         </span>
         <br />
-        <Button>Buy Now</Button>
+        <button className="py-2 px-4 m-2 bg-green-700 text-white font-semibold rounded-lg shadow-md hover:bg-green-900 focus:outline-none focus:ring-2 focus:ring-green-900 focus:ring-opacity-752 ">
+          Buy Now
+        </button>
       </table>
     </div>
   );
