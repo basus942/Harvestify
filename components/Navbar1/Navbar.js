@@ -185,8 +185,8 @@ const Navbar = () => {
       </div>
       {openhamburger && (
         <motion.div
-          initial={{ opacity: 0, x: 100 }}
-          animate={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
           className="absolute w-screen h-screen  z-20 top-[3.2rem] flex items-center left-0 justify-center bg-[#023020]"
         >
           <ul>
