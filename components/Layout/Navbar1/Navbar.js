@@ -44,7 +44,7 @@ const Navbar = () => {
         src="/default.png"
         width="120"
         height="50"
-        className="p-2"
+        className="p-2 cursor-pointer"
         onClick={() => router.push("/Home")}
       />
       <div className="flex mr-8">
@@ -171,9 +171,14 @@ const Navbar = () => {
               </div>
             )
           ) : (
-            <h2 className="text-3xl font-bold grid place-items-center mt-9  ">
-              Login First
-            </h2>
+            <div className="absolute z-30 flex-col w-40 h-40 right-6 top-16 flex items-center justify-center bg-blue-gray-400 rounded-lg drop-shadow-xl">
+              <button
+                className="py-2 px-4 m-2 bg-green-700 text-white font-semibold rounded-lg shadow-md hover:bg-green-900 focus:outline-none focus:ring-2 focus:ring-green-900 focus:ring-opacity-752 "
+                onClick={() => router.push("/Auth/Login")}
+              >
+                Login
+              </button>
+            </div>
           ))}
       </div>
       {/* {mobileview} */}
