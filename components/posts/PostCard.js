@@ -8,7 +8,7 @@ const PostCard = ({ post }) => {
   const { title, slug, summary, contentdesc, coverImage, author } = post.fields;
 
   return (
-    <div className="w-90 mx-auto sm:w-96 h-100  bg-black relative hover:ring-4 ring-yellow-400 rounded-2xl">
+    <div className="w-70 sm:w-96 h-100 mt-8 bg-black relative hover:scale-105 transition ease-in-out rounded-2xl">
       <Link href={`/Blog/${slug}`} aria-label={title}>
         <div className=" aspect-w-1 aspect-h-1 h-full ">
           <Image

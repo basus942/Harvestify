@@ -58,15 +58,15 @@ const CardComp = ({ title, image, price }) => {
           </div>
         </div>
       )}
-      <Card className="w-64 bg-green-400">
+      <Card className="w-64 bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-black via-green-900 to-green-800">
         <LazyMotion features={domAnimation}>
           <m.div whileHover={{ y: -30 }}>
-            <CardHeader shadow={false} floated={false} className="h-36">
+            <CardHeader shadow={false} floated={false} className="h-30">
               <Image
                 src={image}
-                width={500}
-                height={500}
-                quality={80}
+                width={300}
+                height={300}
+                quality={70}
                 className="w-fit  "
               />
             </CardHeader>
@@ -74,10 +74,13 @@ const CardComp = ({ title, image, price }) => {
         </LazyMotion>
         <CardBody>
           <div className="flex items-center justify-between mb-2">
-            <Typography color="blue-gray" className="font-bold text-xl">
+            <Typography className="font-bold text-xl text-white">
               {title}
             </Typography>
-            <Typography color="red" className="font-bold text-xl ">
+            <Typography
+              color="red"
+              className="font-bold text-xl drop-shadow-2xl"
+            >
               Rs {price}
             </Typography>
           </div>

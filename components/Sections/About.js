@@ -6,7 +6,13 @@ const About = () => {
   const isInView = useInView(ref);
 
   return (
-    <div id="AboutUs" className="grid place-content-center " ref={ref}>
+    <div id="AboutUs" className="grid place-content-center pt-6" ref={ref}>
+      <span
+        className="text-4xl mt-8 font-bold flex justify-center items-center"
+        ref={ref}
+      >
+        About Us
+      </span>
       <div className="hero-content flex-col lg:flex-row">
         <LazyMotion features={domAnimation}>
           <m.div
@@ -38,7 +44,7 @@ const About = () => {
             />
           </m.div>
         </LazyMotion>
-        <div className="p-9">
+        <div className="px-6">
           <LazyMotion features={domAnimation}>
             <m.div
               initial="hidden"
@@ -59,25 +65,21 @@ const About = () => {
                 },
               }}
             >
-              <span className="text-4xl m-8 font-bold flex" ref={ref}>
-                About Us
-              </span>
-
-              <p className="text-md mb-8">
+              <p className="text-sm mb-4">
                 Welcome to Harvestify, your one-stop destination for fresh and
                 healthy fruits and vegetables. We believe that good nutrition is
                 the foundation for a healthy and fulfilling life, and that's why
                 we are committed to providing you with the highest quality
                 produce.
               </p>
-              <p className="text-md mb-8">
+              <p className="text-sm mb-4">
                 At Harvestify, we work directly with local farmers and suppliers
                 who share our passion for sustainable and organic farming
                 practices. This allows us to bring you a wide variety of
                 seasonal fruits and vegetables, free from harmful pesticides and
                 chemicals.
               </p>
-              <p className="text-md mb-8">
+              <p className="text-sm mb-4">
                 Our team is dedicated to ensuring that your online shopping
                 experience is convenient and reliable. From hand-picking each
                 item to carefully packaging your order, we strive to deliver
@@ -85,7 +87,7 @@ const About = () => {
                 exceptional customer service and prompt delivery to ensure your
                 satisfaction.
               </p>
-              <p className="text-md">
+              <p className="text-sm">
                 Thank you for choosing Harvestify as your trusted source for
                 farm-fresh produce. Join us in embracing a healthier lifestyle
                 and experience the difference of truly delicious fruits and

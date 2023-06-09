@@ -36,10 +36,10 @@ const Navbar = () => {
   const handleHamburger = () => {
     setOpenhamburger(!openhamburger);
   };
-  console.log(cartMenuOpen + " cart");
-  console.log(openhamburger + " Hamburger");
+  // console.log(cartMenuOpen + " cart");
+  // console.log(openhamburger + " Hamburger");
   return (
-    <div className="bg-green-900 flex justify-between items-center px-5 ">
+    <div className="static flex justify-between items-center px-5 ">
       <Image
         src="/default.png"
         width="120"
@@ -199,14 +199,14 @@ const Navbar = () => {
               className=" p-2 my-1 hover:ring-2 ring-inset cursor-pointer rounded-lg hover:bg-light-green-800"
               onClick={handleHamburger}
             >
-              Profile
+              <Link href="/Blog">Blog</Link>
             </li>
-            <li
+            {/* <li
               className=" p-2 my-1 hover:ring-2 ring-inset cursor-pointer rounded-lg hover:bg-light-green-800"
               onClick={handleHamburger}
             >
               Settings
-            </li>
+            </li> */}
             <li
               className=" p-2 my-1 hover:ring-2 ring-inset cursor-pointer rounded-lg hover:bg-light-green-800"
               onClick={handleHamburger}

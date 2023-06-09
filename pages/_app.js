@@ -9,15 +9,13 @@ export default function App({ Component, pageProps }) {
   // reposnsive contact us
   return (
     <>
-      <div data-theme="forest">
-        <ProtectedRoute>
-          <Context>
-            <Layout>
-              <Component {...pageProps} />
-            </Layout>
-          </Context>
-        </ProtectedRoute>
-      </div>
+      <ProtectedRoute>
+        <Context>
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </Context>
+      </ProtectedRoute>
     </>
   );
 }

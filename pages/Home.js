@@ -15,35 +15,15 @@ const HomePage = () => {
   return (
     <LazyMotion features={domAnimation}>
       <div className="p-4 bg-[rgb(3,130,66)]">
-        <m.div
-          initial="hidden"
-          animate="visible"
-          variants={{
-            hidden: {
-              scale: 0.6,
-            },
-            visible: {
-              scale: 1,
-              opacity: 1,
-              rotate: 360 * 2,
-              transition: {
-                type: "spring",
-                delay: 0.2,
-                duration: 2,
-              },
-            },
-          }}
-        >
-          <Image
-            className="mx-auto w-auto h-auto"
-            width={700}
-            height={500}
-            quality={80}
-            priority={true}
-            alt="banner"
-            src="/6477332.jpg"
-          ></Image>
-        </m.div>
+        <Image
+          className="mx-auto w-auto h-auto"
+          width={700}
+          height={500}
+          quality={80}
+          priority={true}
+          alt="banner"
+          src="/6477332.jpg"
+        ></Image>
       </div>
 
       <div className="font-bold text-white flex items-center justify-center pt-28 pb-4 text-3xl ">

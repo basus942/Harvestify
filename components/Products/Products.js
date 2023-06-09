@@ -48,8 +48,8 @@ const Products = () => {
                         transition: {
                           type: "spring",
 
-                          delay: 0.55 * i,
-                          duration: 0.55,
+                          delay: 0.3 * i,
+                          duration: 0.3,
                         },
                       },
                     }}
