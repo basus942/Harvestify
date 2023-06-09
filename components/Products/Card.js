@@ -66,7 +66,7 @@ const CardComp = ({ title, image, price }) => {
                 src={image}
                 width={300}
                 height={300}
-                quality={70}
+                quality={40}
                 className="w-fit  "
               />
             </CardHeader>
