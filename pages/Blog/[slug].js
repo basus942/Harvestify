@@ -38,7 +38,7 @@ const Details = ({ post }) => {
         <ReactMarkdown components={renderers} className="px-[150px]">
           {summary}
         </ReactMarkdown>
-        <span className="px-[150px]">{renderedContent}</span>
+        {/* <span className="px-[150px]">{renderedContent}</span> */}
       </div>
     </div>
   );
