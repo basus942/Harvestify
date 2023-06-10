@@ -54,6 +54,7 @@ const Products = () => {
             y: 0,
             transition: {
               delay: 0.5,
+              ease: easeOut,
             },
           },
         }}
@@ -90,7 +91,7 @@ const Products = () => {
 
                       transition: {
                         type: "spring",
-
+                        ease: easeOut,
                         delay: 0.3 * i,
                         duration: 0.3,
                       },

@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import Image from "next/image";
-import { m, LazyMotion, useInView, domAnimation, easeIn } from "framer-motion";
+import { m, LazyMotion, useInView, domAnimation, easeOut } from "framer-motion";
 const About = () => {
   const ref = useRef(null);
   const isInView = useInView(ref);
@@ -22,7 +22,7 @@ const About = () => {
 
             transition: {
               delay: 0.5,
-              ease: easeIn,
+              ease: easeOut,
             },
           },
         }}
