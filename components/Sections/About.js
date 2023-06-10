@@ -1,18 +1,36 @@
 import React, { useRef } from "react";
 import Image from "next/image";
-import { m, LazyMotion, useInView, domAnimation } from "framer-motion";
+import { m, LazyMotion, useInView, domAnimation, easeIn } from "framer-motion";
 const About = () => {
   const ref = useRef(null);
   const isInView = useInView(ref);
 
   return (
     <div id="AboutUs" className="grid place-content-center pt-6" ref={ref}>
-      <span
+      <m.span
+        initial="hidden"
+        animate={isInView ? "visible" : "hidden"}
+        variants={{
+          hidden: {
+            opacity: 0,
+            y: "10vh",
+          },
+          visible: {
+            opacity: 1,
+
+            y: 0,
+
+            transition: {
+              delay: 0.5,
+              ease: easeIn,
+            },
+          },
+        }}
         className="text-4xl mt-8 font-bold flex justify-center items-center"
         ref={ref}
       >
         About Us
-      </span>
+      </m.span>
       <div className="hero-content flex-col lg:flex-row">
         <LazyMotion features={domAnimation}>
           <m.div

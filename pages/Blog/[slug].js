@@ -1,30 +1,29 @@
 import client from "@/lib/Contentful/client";
 import Image from "next/image";
+
 import { BLOCKS, MARKS } from "@contentful/rich-text-types";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 const Details = ({ post }) => {
-  const { title, longsummary, coverImage, author } = post.fields;
-  const options = {
-    renderMark: {},
-    renderNode: {
-      [BLOCKS.EMBEDDED_ASSET]: (node) => {
-        const { file } = node.data.target.fields;
-        const imageUrl = "https:" + file.url;
-
-        return (
-          <Image
-            src={imageUrl}
-            width={300}
-            height={300}
-            className="grid place-items-center"
-          />
-        );
-      },
+  const { title, longsummary, coverImage, summary, author } = post.fields;
+  // const options = {
+  //   renderMark: {},
+  //   renderNode: {
+  //     [BLOCKS.EMBEDDED_ASSET]: (node) => {
+  //       const { file } = node.data.target.fields;
+  //       const imageUrl = "https:" + file.url;
+  //     },
+  //   },
+  // };
+  const renderers = {
+    image: ({ src, alt }) => {
+      console.log(src);
+      return <Image className="rounded-xl" src={src} alt={alt} />;
     },
   };
 
   const richTextField = longsummary;
-  const renderedContent = documentToReactComponents(richTextField, options);
+  // const renderedContent = documentToReactComponents(richTextField, options);
 
   return (
     <div className="grid place-items-center">
@@ -34,8 +33,13 @@ const Details = ({ post }) => {
         height={300}
         className="object-cover object-center rounded-2xl mt-5"
       />
-      <span className="text-xl font-bold m-12">{title}</span>
-      <span className="px-[150px]">{renderedContent}</span>
+      <div className="flex flex-col justify-center items-center">
+        <span className="text-xl font-bold m-12">{title}</span>
+        <ReactMarkdown components={renderers} className="px-[150px]">
+          {summary}
+        </ReactMarkdown>
+        <span className="px-[150px]">{renderedContent}</span>
+      </div>
     </div>
   );
 };
